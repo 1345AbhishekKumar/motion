@@ -1,0 +1,53 @@
+/* app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Performance baseline ──────────────────────────────────────────────── */
+html {
+  /* Use native smooth scroll only when no JS scroll is driving things */
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: hidden;
+  background: #050505;
+  color: #ffffff;
+  /* Hint compositor to promote the root layer */
+  will-change: scroll-position;
+}
+
+/* ─── Marquee keyframes ──────────────────────────────────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.animate-marquee        { animation: marquee         20s linear infinite; }
+.animate-marquee-slow   { animation: marquee         35s linear infinite; }
+.animate-marquee-reverse{ animation: marquee-reverse 40s linear infinite; }
+
+/* Pause on hover – applied with the class */
+.pause-on-hover:hover { animation-play-state: paused; }
+
+/* ─── Tunnel animation ───────────────────────────────────────────────────── */
+@keyframes tunnel-dive {
+  0%   { transform: translateZ(-2000px) rotate(0deg);  opacity: 0; }
+  20%  { opacity: 0.1; }
+  80%  { opacity: 1; }
+  100% { transform: translateZ(1000px)  rotate(90deg); opacity: 0; }
+}
+.tunnel-ring {
+  animation: tunnel-dive 8s infinite linear;
+  transform-style: preserve-3d;
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────────── */
+::selection { background: rgba(255, 255, 255, 0.2); }
+
+/* ─── Smooth will-change hints ──────────────────────────────────────────── */
+.will-change-transform { will-change: transform; }
