@@ -36,13 +36,13 @@ export default function ExperimentalFooter() {
                       font-mono text-sm uppercase font-bold text-gray-500">
         <div className="flex gap-8">
           {["Instagram", "Twitter", "Vimeo"].map((link) => (
-            <a key={link} href="#" className="hover:text-black transition-colors">
+            <a key={link} href="#" className="hover:text-black active:scale-[0.97] transition-[transform,color] duration-160 ease-out inline-block">
               {link}
             </a>
           ))}
         </div>
         <div className="text-center md:text-right">
-          <p className="text-black mb-1">STUDIO ABHISHEK</p>
+          <p className="text-black mb-1">ABHISHEK KUMAR</p>
           <p>© 2026 // ALL RIGHTS RESERVED</p>
         </div>
       </div>

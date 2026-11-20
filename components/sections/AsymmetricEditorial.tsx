@@ -50,7 +50,7 @@ export default function AsymmetricEditorial() {
               <div
                 key={`text-${item.id}`}
                 className={`absolute inset-0 flex flex-col justify-center
-                  transition-all duration-[900ms] ease-[cubic-bezier(0.76,0,0.24,1)]
+                  transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)]
                   ${activeIndex === index
                     ? "opacity-100 translate-y-0"
                     : activeIndex > index

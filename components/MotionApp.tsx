@@ -16,11 +16,8 @@ import ApertureGrid       from "./sections/ApertureGrid";
 import OrbitalMatrix      from "./sections/OrbitalMatrix";
 import AsymmetricEditorial from "./sections/AsymmetricEditorial";
 import KineticDataStream  from "./sections/KineticDataStream";
-import InteractiveSpotlight from "./sections/InteractiveSpotlight";
 import ProductionIndex    from "./sections/ProductionIndex";
 import LiquidPlasma       from "./sections/LiquidPlasma";
-import HypnoticTunnel     from "./sections/HypnoticTunnel";
-import BarcodeSplitter    from "./sections/BarcodeSplitter";
 import PaperUnrollShowcase from "./sections/PaperUnrollShowcase";
 import ExperimentalFooter from "./sections/ExperimentalFooter";
 
@@ -67,13 +64,13 @@ export default function MotionApp() {
           onClick={() => setIsMenuOpen((v) => !v)}
           className="group relative flex items-center justify-center w-14 h-14 rounded-full
                      bg-white/10 backdrop-blur-md border border-white/20
-                     hover:bg-white/20 hover:scale-105 active:scale-95
-                     transition-all duration-300 pointer-events-auto overflow-hidden"
+                     hover:bg-white/20 hover:scale-105 active:scale-[0.97]
+                     transition-[transform,background-color,border-color] duration-200 ease-out pointer-events-auto overflow-hidden"
         >
-          <span className={`absolute transition-all duration-500 ease-in-out ${isMenuOpen ? "rotate-90 opacity-0 scale-50" : "rotate-0 opacity-100 scale-100"}`}>
+          <span className={`absolute transition-[transform,opacity] duration-200 ease-out ${isMenuOpen ? "rotate-90 opacity-0 scale-75" : "rotate-0 opacity-100 scale-100"}`}>
             <MenuIcon className="w-5 h-5" />
           </span>
-          <span className={`absolute transition-all duration-500 ease-in-out ${isMenuOpen ? "rotate-0 opacity-100 scale-100" : "-rotate-90 opacity-0 scale-50"}`}>
+          <span className={`absolute transition-[transform,opacity] duration-200 ease-out ${isMenuOpen ? "rotate-0 opacity-100 scale-100" : "-rotate-90 opacity-0 scale-75"}`}>
             <X className="w-5 h-5" />
           </span>
         </button>
@@ -81,8 +78,8 @@ export default function MotionApp() {
 
       {/* ── FULLSCREEN MENU OVERLAY ── */}
       <div
-        className={`fixed inset-0 z-[60] flex items-center transition-all duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)]
-          ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none delay-200"}`}
+        className={`fixed inset-0 z-[60] flex items-center transition-[opacity,visibility] duration-400 ease-out
+          ${isMenuOpen ? "opacity-100 pointer-events-auto visible" : "opacity-0 pointer-events-none invisible delay-200"}`}
       >
         {/* Background layer with image reveal */}
         <div className="absolute inset-0 z-0 bg-[#0a0a0a]">
@@ -109,19 +106,19 @@ export default function MotionApp() {
               onClick={() => handleNavigate(link.targetId)}
             >
               <span
-                className={`text-sm md:text-xl font-mono text-gray-500 transition-all duration-700 ${
+                className={`text-sm md:text-xl font-mono text-gray-500 transition-[transform,opacity] duration-400 ease-out ${
                   isMenuOpen ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
                 }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                style={{ transitionDelay: `${index * 60}ms` }}
               >
                 {link.id}
               </span>
               <h2
                 className={`text-5xl md:text-8xl lg:text-[10vw] font-black tracking-tighter uppercase
                   text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-500 hover:to-white
-                  transition-all duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)]
+                  transition-[transform,opacity] duration-400 ease-[cubic-bezier(0.23,1,0.32,1)]
                   ${isMenuOpen ? "translate-y-0 rotate-0 opacity-100" : "translate-y-full rotate-6 opacity-0"}`}
-                style={{ transitionDelay: `${index * 50 + 100}ms` }}
+                style={{ transitionDelay: `${index * 40 + 60}ms` }}
               >
                 {link.title}
               </h2>
@@ -146,7 +143,7 @@ export default function MotionApp() {
         <div className="sticky top-0 h-screen w-full z-0 flex flex-col items-center justify-center overflow-hidden">
           <main
             className={`relative w-full h-full flex flex-col items-center justify-center
-              transition-all duration-[1000ms] ease-[cubic-bezier(0.76,0,0.24,1)] origin-center
+              transition-[transform,opacity,filter] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] origin-center
               ${isMenuOpen ? "scale-[0.85] opacity-30 blur-md pointer-events-none" : "scale-100 opacity-100 blur-0"}`}
           >
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(40,40,50,0.2)_0%,transparent_60%)] pointer-events-none" />
@@ -174,11 +171,8 @@ export default function MotionApp() {
         <OrbitalMatrix />
         <AsymmetricEditorial />
         <KineticDataStream />
-        <InteractiveSpotlight />
         <ProductionIndex />
         <LiquidPlasma />
-        <HypnoticTunnel />
-        <BarcodeSplitter />
         <PaperUnrollShowcase />
         <ExperimentalFooter />
       </div>

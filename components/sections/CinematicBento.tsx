@@ -102,7 +102,7 @@ export default function CinematicBento() {
               src={VIDEO_DATA[0].videoUrl} poster={VIDEO_DATA[0].poster}
               autoPlay loop muted playsInline
               className="absolute inset-0 w-full h-full object-cover opacity-60
-                         group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+                         group-hover:opacity-100 transition-[opacity,transform] duration-400 ease-out group-hover:scale-105"
             />
             <div className="card-content absolute inset-0 flex flex-col justify-end will-change-transform opacity-0">
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
@@ -128,7 +128,7 @@ export default function CinematicBento() {
               src={VIDEO_DATA[3].videoUrl} poster={VIDEO_DATA[3].poster}
               autoPlay loop muted playsInline
               className="absolute inset-0 w-full h-full object-cover opacity-60
-                         group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+                         group-hover:opacity-100 transition-[opacity,transform] duration-400 ease-out group-hover:scale-105"
             />
             <div className="card-content absolute inset-0 flex flex-col justify-end will-change-transform opacity-0">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80 pointer-events-none" />
@@ -150,7 +150,7 @@ export default function CinematicBento() {
               src={VIDEO_DATA[5].videoUrl} poster={VIDEO_DATA[5].poster}
               autoPlay loop muted playsInline
               className="absolute inset-0 w-full h-full object-cover opacity-60
-                         group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+                         group-hover:opacity-100 transition-[opacity,transform] duration-400 ease-out group-hover:scale-105"
             />
             <div className="card-content absolute inset-0 flex flex-col justify-end will-change-transform opacity-0">
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-80 pointer-events-none" />
@@ -171,11 +171,11 @@ export default function CinematicBento() {
               src={VIDEO_DATA[4].videoUrl} poster={VIDEO_DATA[4].poster}
               autoPlay loop muted playsInline
               className="absolute inset-0 w-full h-full object-cover opacity-30
-                         group-hover:opacity-50 transition-all duration-700"
+                         group-hover:opacity-50 transition-[opacity,transform] duration-400 ease-out"
             />
             <div className="card-content relative z-10 text-center will-change-transform opacity-0 w-full">
               <div className="w-14 h-14 mx-auto rounded-full border border-white/30 flex items-center
-                              justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                              justify-center mb-3 group-hover:scale-110 active:scale-95 transition-transform duration-200 ease-out">
                 <ArrowUpRight className="w-6 h-6 text-white" />
               </div>
               <span className="font-mono text-sm tracking-widest text-white uppercase">View Gallery</span>

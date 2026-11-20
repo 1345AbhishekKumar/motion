@@ -114,7 +114,7 @@ export default function StackingShowcase() {
                 </div>
                 <button className="flex items-center gap-3 bg-white text-black px-6 py-3 rounded-full
                                    font-bold uppercase tracking-widest text-xs
-                                   hover:bg-gray-200 transition-colors pointer-events-auto">
+                                   hover:bg-gray-200 active:scale-[0.97] transition-[transform,background-color] duration-160 ease-out pointer-events-auto">
                   Play Sequence <Play className="w-3 h-3 fill-current" />
                 </button>
               </div>

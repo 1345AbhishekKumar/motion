@@ -249,7 +249,7 @@ export default function PaperUnrollShowcase() {
               </div>
               <div className="w-full h-[2px] bg-white/10 relative overflow-hidden mb-6">
                 <div
-                  className="absolute top-0 left-0 h-full bg-cyan-400 transition-all duration-100 ease-linear"
+                  className="absolute top-0 left-0 h-full bg-cyan-400 transition-[width] duration-100 ease-linear"
                   style={{ width: `${telemetry}%` }}
                 />
               </div>
@@ -273,7 +273,7 @@ export default function PaperUnrollShowcase() {
             {["top-left", "top-right", "bottom-left", "bottom-right"].map((pos) => (
               <div
                 key={pos}
-                className={`absolute w-12 h-12 transition-all duration-500 group-hover:w-8 group-hover:h-8 ${
+                className={`absolute w-12 h-12 transition-[width,height] duration-250 ease-out group-hover:w-8 group-hover:h-8 ${
                   pos === "top-left"     ? "-top-1 -left-1 border-t-[3px] border-l-[3px]"  :
                   pos === "top-right"    ? "-top-1 -right-1 border-t-[3px] border-r-[3px]" :
                   pos === "bottom-left"  ? "-bottom-1 -left-1 border-b-[3px] border-l-[3px]" :

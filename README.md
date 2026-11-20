@@ -35,6 +35,4 @@ You can start editing the page by modifying `app/page.tsx` (or `pages/index.tsx`
 To learn more about Next.js, take a look at the following resources:
 
 - Next.js Documentation - learn about Next.js features and API.
-- Learn Next.js - an interactive Next.js tutorial.# motion
-# motion
-# motion
+- Learn Next.js - an interactive Next.js tutorial.

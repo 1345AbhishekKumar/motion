@@ -31,8 +31,8 @@ function CarouselCard({ item }: { item: VideoItem }) {
                       w-14 h-14 border border-white/30 backdrop-blur-sm rounded-full
                       flex items-center justify-center
                       text-white/0 group-hover:text-white
-                      group-hover:bg-white/10 group-hover:scale-110 group-hover:border-white/50
-                      transition-all duration-500">
+                      group-hover:bg-white/10 group-hover:scale-110 group-hover:border-white/50 active:scale-95
+                      transition-[transform,background-color,border-color,color] duration-200 ease-out">
         <Play className="w-5 h-5 ml-1" fill="currentColor" />
       </div>
 
@@ -126,10 +126,12 @@ export default function ArchCarousel({ items }: { items: VideoItem[] }) {
 
   /* ── pointer handlers ── */
   const onPointerDown = (e: React.PointerEvent) => {
+    if (isDragging.current) return;
     isDragging.current = true;
     startX.current = e.clientX;
     startScroll.current = targetScrollRef.current;
     if (containerRef.current) containerRef.current.style.cursor = "grabbing";
+    (e.target as HTMLElement).setPointerCapture?.(e.pointerId);
   };
 
   const onPointerMove = (e: React.PointerEvent) => {
@@ -137,9 +139,10 @@ export default function ArchCarousel({ items }: { items: VideoItem[] }) {
     targetScrollRef.current = startScroll.current - (e.clientX - startX.current) * 0.008;
   };
 
-  const onPointerUp = () => {
+  const onPointerUp = (e: React.PointerEvent) => {
     isDragging.current = false;
     if (containerRef.current) containerRef.current.style.cursor = "grab";
+    (e.target as HTMLElement).releasePointerCapture?.(e.pointerId);
   };
 
   /* BUG FIX: wheel must be passive:false to call preventDefault;

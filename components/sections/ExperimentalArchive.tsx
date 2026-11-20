@@ -34,7 +34,7 @@ export default function ExperimentalArchive() {
             A brutalist exploration of our finest motion sequences. Hover over the indices
             below to reveal the cinematic universe hidden within each project file.
           </p>
-          <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-gray-400 transition-colors w-max">
+          <button className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white hover:text-gray-400 active:scale-[0.97] transition-[transform,color] duration-160 ease-out w-max">
             View All Projects <ArrowUpRight className="w-4 h-4" />
           </button>
         </div>
@@ -48,13 +48,13 @@ export default function ExperimentalArchive() {
             onMouseEnter={() => setHoveredIdx(idx)}
             onMouseLeave={() => setHoveredIdx(null)}
             className={`group relative w-full border-t border-white/10 cursor-pointer overflow-hidden
-                        transition-all duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)]
+                        transition-[height] duration-400 ease-[cubic-bezier(0.23,1,0.32,1)]
                         ${hoveredIdx === idx ? "h-[300px] md:h-[400px]" : "h-[100px] md:h-[140px]"}`}
           >
             {/* Video reveal */}
             <div
               className={`absolute inset-0 w-full h-full
-                          transition-all duration-[800ms] ease-out
+                          transition-[opacity,transform] duration-400 ease-out
                           ${hoveredIdx === idx ? "opacity-50 scale-100" : "opacity-0 scale-110"}`}
             >
               <video
@@ -70,24 +70,24 @@ export default function ExperimentalArchive() {
             <div className="relative z-10 w-full h-full px-8 md:px-[10vw] flex flex-col justify-center pointer-events-none">
               <div className="flex items-center justify-between w-full">
                 <div className="flex items-baseline gap-6 md:gap-12">
-                  <span className={`font-mono text-sm md:text-lg transition-colors duration-500 ${hoveredIdx === idx ? "text-white" : "text-gray-600"}`}>
+                  <span className={`font-mono text-sm md:text-lg transition-colors duration-300 ${hoveredIdx === idx ? "text-white" : "text-gray-600"}`}>
                     {work.id}
                   </span>
                   <h3
                     className={`text-4xl md:text-7xl font-bold uppercase tracking-tighter
-                                transition-all duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)]
+                                transition-[transform,color] duration-350 ease-[cubic-bezier(0.23,1,0.32,1)]
                                 ${hoveredIdx === idx ? "text-white translate-x-4 md:translate-x-8" : "text-gray-300 translate-x-0"}`}
                   >
                     {work.title}
                   </h3>
                 </div>
                 <div className="hidden md:flex items-center gap-8">
-                  <span className={`font-mono text-sm tracking-widest uppercase transition-colors duration-500 ${hoveredIdx === idx ? "text-white" : "text-gray-600"}`}>
+                  <span className={`font-mono text-sm tracking-widest uppercase transition-colors duration-300 ${hoveredIdx === idx ? "text-white" : "text-gray-600"}`}>
                     {work.category}
                   </span>
                   <div
                     className={`w-12 h-12 rounded-full border flex items-center justify-center
-                                transition-all duration-[800ms]
+                                transition-[transform,background-color,border-color,color] duration-250 ease-out
                                 ${hoveredIdx === idx ? "border-white bg-white text-black -rotate-45" : "border-white/20 text-white rotate-0"}`}
                   >
                     <ArrowUpRight className="w-5 h-5" />

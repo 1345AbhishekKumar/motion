@@ -26,7 +26,7 @@ export default function ElasticGallery() {
           <div
             key={item.id}
             className="group relative flex-1 hover:flex-[4]
-                       transition-all duration-[800ms] ease-[cubic-bezier(0.76,0,0.24,1)]
+                       transition-[flex-grow] duration-400 ease-[cubic-bezier(0.23,1,0.32,1)]
                        overflow-hidden rounded-2xl md:rounded-[2rem]
                        bg-zinc-900 cursor-pointer border border-white/5 shadow-2xl"
           >
@@ -54,7 +54,7 @@ export default function ElasticGallery() {
             {/* Expanded info */}
             <div className="absolute bottom-0 left-0 p-6 md:p-10
                             translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100
-                            transition-all duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)] delay-100 w-full">
+                            transition-[transform,opacity] duration-350 ease-[cubic-bezier(0.23,1,0.32,1)] delay-75 w-full">
               <div className="flex justify-between items-end w-full">
                 <div>
                   <p className="font-mono text-xs text-blue-400 mb-2 tracking-widest uppercase">
@@ -65,7 +65,7 @@ export default function ElasticGallery() {
                   </h3>
                 </div>
                 <div className="hidden md:flex w-12 h-12 rounded-full bg-white text-black
-                                items-center justify-center hover:scale-110 transition-transform">
+                                items-center justify-center hover:scale-110 active:scale-[0.97] transition-transform duration-160 ease-out">
                   <Play className="w-5 h-5 ml-1" fill="currentColor" />
                 </div>
               </div>

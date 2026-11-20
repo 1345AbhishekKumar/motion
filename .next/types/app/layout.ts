@@ -1,4 +1,4 @@
-// File: D:\Code\completed_landing_page\motion-nextjs\app\layout.tsx
+// File: D:\Code\websites\motion\app\layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
